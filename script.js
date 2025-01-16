@@ -20,7 +20,9 @@ for (var i=0; i < country.length; i++){
     }  
 }
 //finds the brand with the highest rated ramen in a country
-//If their are multiple winners, the procedure returns a list of brands
+//If their are multiple winners, the procedure finds a list of brands
+//countryChoice {string} The country that the function checks
+//returns {list} The brand or list of brands with the highest rated ramen
 function getBrandWithBestRamenInCountry(countryChoice){
     var ranksInCountry=[]
     var brandsInCountry=[]
@@ -57,8 +59,9 @@ function getBrandWithBestRamenInCountry(countryChoice){
 console.log(getBrandWithBestRamenInCountry("israel"));
 
 
-//this function takes a string and finds the country with the most of that category
-//either brand, flavors, or stars
+//this function finds the country with the most of an item
+//item {string}  brands, flavors, and stars are valid inputs
+//returns the country with the most ramen brands, ramen flavors, or stars
 function getCountryWithMost(item){
     //finds country with the most unique ramen brands
     if(item.toLowerCase()=="brands"){
@@ -142,6 +145,8 @@ function getCountryWithMost(item){
 
 
 //find the ramens based on how many stars.
+//ramenStars {number} - a number of how many stars a ramen has been rated
+//return {list} - the ramen varieties with specified number of stars
 function getRamenByStars(ramenStars){
     var matchingRamen = [];
     for(var i = 0; i < stars.length; i++){
@@ -156,7 +161,9 @@ function getRamenByStars(ramenStars){
    }
    console.log(getRamenByStars(10));
    
-   //finds ramen varieties based country
+//finds ramen varieties based country
+//ramenCountry {string} - The country that a ramen in from
+//return {list} - The ramen varieties from specified country
 function getRamenByCountry(ramenCountry){
     var ramenInCountry = [];
     for(var i = 0; i < country.length; i++){
@@ -172,7 +179,9 @@ function getRamenByCountry(ramenCountry){
 console.log(getRamenByCountry("123"));
    
 
-   //put in a brand and get how many ramens there are
+ //Shows how many varieties of ramen a brand makes
+//chosenBrand {string} - the brand that makes ramen
+//return {number} - the number of ramens that the specified brand makes
 function getNumberByBrand(chosenBrand){
     var numberInBrand = 0;  
    for(var i = 0; i < brand.length; i++){
